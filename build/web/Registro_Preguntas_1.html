@@ -1,0 +1,220 @@
+<html>
+    <head>
+        <title>Registro Preguntas</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="img/pesta1.ico"/>
+        <link rel="stylesheet" type="text/css" href="prueba.css">
+        <link rel="stylesheet" type="text/css" href="boton.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function prevista(imagen) {
+                if (imagen.files && imagen.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById("previa").src=e.target.result;
+                    }
+                    reader.readAsDataURL(imagen.files[0]);
+                }
+                document.getElementById("previa").style.visibility="visible";
+                document.getElementById("previa").style.width="30%";
+                document.getElementById("previa").style.heigth="30%"
+            }
+            function cambio(){
+                var cuantos=tema.length
+                for(var i=1;i<=cuantos;i++){
+                    tema.options[1]=null;
+                }
+                var ejes=eje.selectedIndex;
+                if(ejes===1){
+                    auxi=["Numero","Adicion y sustraccion","Multiplicacion y division","Proporcionalidad","Ecuaciones","Funciones","Patrones, figuras geometricas y expresiones equivalentes"];
+                    for(i=0;i<auxi.length;i++){
+                        tema.options[i+1]=new Option(auxi[i])
+                    }
+                }
+                else{
+                    if(ejes===2){
+                        auxi=["Figuras y cuerpos geometricos","Magnitudes y medidas"];
+                        for(i=0;i<auxi.length;i++){
+                            tema.options[i+1]=new Option(auxi[i])
+                        }
+                    }
+                    else{
+                        if(ejes===3){
+                            auxi=["Estadistica","Probabilidad"];
+                            for(i=0;i<auxi.length;i++){
+                                tema.options[i+1]=new Option(auxi[i])
+                            }
+                        }
+                    }
+                }
+                tema.options[0].selected=true;
+            }
+            function lleno(){
+                var contador=0;
+                if(document.getElementById("pregunta").value===""){
+                    alert("Favor de llenar una pregunta");
+                    document.getElementById("pregunta").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                if(document.getElementById("a").value===""){
+                    alert("Favor de llenar la opcion a");
+                    document.getElementById("a").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                if(document.getElementById("b").value===""){
+                    alert("Favor de selecionar la opcion b");
+                    document.getElementById("b").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                if(document.getElementById("c").value===""){
+                    alert("Favor de selecionar la opcion c");
+                    document.getElementById("c").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                if(document.getElementById("d").value===""){
+                    alert("Favor de selecionar la opcion d");
+                    document.getElementById("d").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                for(i=0,conta=0;i<opciones.length;i++){
+                    if(opciones[i].checked){
+                        contador+=1;
+                        break;
+                    }
+                    else{
+                        conta+=1;
+                    }
+                    if(conta===4) {
+                        alert("Favor de selecionar una correcta");
+                        document.getElementById("opciones").focus();
+                        break;
+                    }
+                }
+                var aux=eje.selectedIndex;
+                if(aux===0){
+                    alert("Favor de selecionar un eje");
+                    document.getElementById("eje").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                aux=tema.selectedIndex;
+                if(aux===0){
+                    alert("Favor de selecionar un tema");
+                    document.getElementById("tema").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                for(i=0,conta=0;i<tipo.length;i++){
+                    if(tipo[i].checked){
+                        contador+=1;
+                        break;
+                    }
+                    else{
+                        conta+=1;
+                    }
+                    if(conta===4) {
+                        alert("Favor de selecionar un tipo");
+                        document.getElementById("tipo").focus();
+                        break;
+                    }
+                }
+                for(i=0,conta=0;i<dificultad.length;i++){
+                    if(dificultad[i].checked){
+                        contador+=1;
+                        break;
+                    }
+                    else{
+                        conta+=1;
+                    }
+                    if(conta===3) {
+                        alert("Favor de selecionar una dificultad");
+                        document.getElementById("dificultad").focus();
+                        break;
+                    }
+                }
+                if(contador===10){
+                    if(confirm("¿Registrar pregunta?")){
+                        alert("Se registrara la pregunta");
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
+            }
+           
+        </script>
+    </head>
+    <body>
+        <div style="background-color: rgba(0,0,0,0.2);">
+            <h1>Aprender</h1>
+            <form action="Registro_Preguntas.jsp" method="post" enctype="multipart/form-data">
+                <h3>Pregunta</h3>
+                <input type="text" id="pregunta" name="pregunta"  style="width: 50%;">
+                <br>
+                <h3>Opciones (Marca cual va a ser la correcta)</h3>
+                <input type="radio" value="a" id="opciones" name="opciones" > <input type="text" id="a" name="a"  style="width: 50%;">
+                <br>
+                <br>
+                <input type="radio" value="b" id="opciones" name="opciones"> <input type="text" id="b" name="b" style="width: 50%;">
+                <br>
+                <br>
+                <input type="radio" value="c" id="opciones" name="opciones"> <input type="text" id="c" name="c" style="width: 50%;">
+                <br>
+                <br>
+                <input type="radio" value="d" id="opciones" name="opciones"> <input type="text" id="d" name="d" style="width: 50%;">
+                <br>
+                <h3>Seleciona un tema</h3>
+                <select name="eje" id="eje" onchange="cambio()">
+                    <option selected disabled>Seleccione algun eje</option>
+                    <option>Numero, algebra y variacion</option>
+                    <option>Forma, espacio y medida</option>
+                    <option>Analisis de datos</option>
+                </select>
+                <select name="tema" id="tema">
+                    <option selected disabled>Seleccione algun tema</option>
+                </select>
+                <br>
+                <h3>Selecione un tipo</h3>
+                <input type="radio" value="Cuestionario" id="tipo" name="tipo"> Cuestionario
+                <input type="radio" value="Problemario" id="tipo" name="tipo"> Problemario
+                <input type="radio" value="Examen" id="tipo" name="tipo"> Examen
+                <input type="radio" value="Examen Sorpresa" id="tipo" name="tipo"> Examen Sorpresa
+                <br>
+                <h3>Selecione una Dificultad</h3>
+                <input type="radio" value="Facil" id="dificultad" name="dificultad"> Facil
+                <input type="radio" value="Media" id="dificultad" name="dificultad"> Media
+                <input type="radio" value="Dificil" id="dificultad" name="dificultad"> Dificil
+                <br>
+                <br>
+                <h3>Selecione una Imagen liagada a la pregunta(Opcional)</h3>
+                <img style="visibility: hidden" id="previa" src="#">
+                <br>
+                <input accept="image/*" type="file" name="imagen" id="imagen" onchange="prevista(imagen)">
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="Registrar pregunta" onclick="return lleno()" class="button">
+                <br><br>
+            </form>
+        </div>
+        
+        <a href="opcmaes.jsp"><button id="myBtn"><i class="fa fa-home"></i></button></a>
+    </body>
+</html>

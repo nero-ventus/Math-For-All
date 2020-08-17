@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Registro Grupos</title>
+        <link rel="stylesheet" type="text/css" href="prueba.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="img/pesta1.ico"/>
+    </head>
+    <body>
+        <a href="opcdirec.jsp"><button id="myBtn2"><i class="fa fa-home"></i></button></a>
+         <div class="principal" style="height: 100%; width: 100%; background-color: rgba(0,0,0,0.2);">
+            <br><br><br><br><br><br>
+            <h1 style="font-weight: 900;">Registro de Grupos</h1>
+        <form action="Registro_Grupos.jsp">
+            <h3>Ingrese el nombre del grupo</h3>
+            <input type="text" name="Nombre_G" id="Nombre_G" style="width: 30%;">
+            <h3>Selecione un turno</h3>
+            <select name="Turno" id="Turno">
+                <option>Selecione algun turno</option>
+                <option value="1">Matutino</option>
+                <option value="2">Vespertino</option>
+                <option value="3">Completo</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Enviar Datos" class="button">
+        </form>
+         </div>
+    </body>
+</html>

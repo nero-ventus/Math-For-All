@@ -1,0 +1,151 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    	width: 99%;
+	height: 250%;
+	color: #fff;
+	background: linear-gradient(-45deg,#00223E , #FFA17F,#00223E , #FFA17F);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 7s ease infinite;
+	-moz-animation: Gradient 7s ease infinite;
+	animation: Gradient 7s ease infinite;
+}
+
+body{
+    text-align:center;
+    align-items: center;
+}
+
+.ppp{
+    text-align:center;
+}
+
+fieldset{
+    align-self: center;
+    background:rgba(0,0,0,0.3);
+    font-weight: bold;
+    border-color: white;
+    border-width: 3px;
+    
+}
+.fiel2{
+    align-self: center;
+     background:rgba(0,0,0,0);
+     border-color: white;
+     border-width: 1.5px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 25px;
+    background:rgba(0,0,0,0.5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: lightgray; 
+    border-radius: 25px;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
+input[type=text],[type=date],[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid;
+            border-color: lightcyan;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            font-weight: bold;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        select{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid;
+            border-color: lightcyan;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+        }
+
+input[type=text],[type=date],[type=password]:focus {
+            border: 3px solid;
+            border-color: cyan;
+            font-weight: bold;
+        }            
+        
+        
+input[type=button],[type=file],[type=submit] {
+    background-color: rgba(0,0,0,0.2);
+    color: white; 
+    border: 2px solid;
+    border-radius: 12px;
+    border-color: white;
+    font-size: 1vw;
+    padding: 12px 28px;
+    cursor: pointer; 
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+}
+
+input[type=button],[type=file]:hover {
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer; 
+}
+
+input[type=button],[type=file]:active {
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  transform: translateY(4px);
+  cursor: pointer; 
+  
+}

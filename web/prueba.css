@@ -1,0 +1,199 @@
+body {
+    color: black;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 7s ease infinite;
+    -moz-animation: Gradient 7s ease infinite;
+    animation: Gradient 7s ease infinite;
+    -webkit-background-clip: text;
+}
+body,h1,h2,h3,h4,h5{font-family: 'Quicksand', sans-serif;}
+
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+.ppp{
+    text-align:center;
+}
+
+fieldset{
+    align-self: center;
+    background:rgba(0,0,0,0.3);
+    font-weight: bold;
+    border-color: white;
+    border-width: 3px;
+    
+}
+.fiel2{
+    align-self: center;
+     background:rgba(0,0,0,0);
+     border-color: white;
+     border-width: 1.5px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 25px;
+    background:rgba(0,0,0,0.5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: lightgray; 
+    border-radius: 25px;
+}
+body{
+    text-align:center;
+    align-items: center;
+}
+input[type=text],[type=date],[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid;
+            border-color: lightcyan;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            font-weight: bold;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        select{
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid;
+            border-color: lightcyan;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+        }
+
+input[type=text],[type=date],[type=password]:focus {
+            border: 3px solid;
+            border-color: cyan;
+            font-weight: bold;
+        }            
+        
+        
+input[type=button],[type=file] {
+    background-color: rgba(0,0,0,0.2);
+    color: white; 
+    border: 2px solid;
+    border-radius: 12px;
+    border-color: white;
+    font-size: 1vw;
+    padding: 12px 28px;
+    cursor: pointer; 
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+}
+
+input[type=button],[type=file]:hover {
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer; 
+}
+
+input[type=button],[type=file]:active {
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  transform: translateY(4px);
+  cursor: pointer; 
+  
+}
+
+.button {
+    background-color: rgba(0,0,0,0.2);
+    color: white; 
+    border: 2px solid;
+    border-radius: 12px;
+    border-color: white;
+    font-size: 1vw;
+    padding: 12px 28px;
+    cursor: pointer; 
+}
+
+.button:hover {
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer; 
+}
+
+.button:active {
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  transform: translateY(4px);
+  cursor: pointer; 
+  
+}
+
+#myBtn2 {
+    position: absolute;
+    bottom: 20px; /* Place the button at the bottom of the page */
+    left: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgba(0,0,0,0.2); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1.5vw; /* Increase font size */
+}
+
+#myBtn2:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+img.img1 {
+  display: block;
+  height: 170%;
+  width: 100%;
+  top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}

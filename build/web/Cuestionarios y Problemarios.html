@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Cuestionarios y Problemarios</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="prueba.css">
+        <link rel="stylesheet" type="text/css" href="boton.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function cambio(){
+                var cuantos=tema.length
+                for(var i=1;i<=cuantos;i++){
+                    tema.options[1]=null;
+                }
+                var ejes=eje.selectedIndex;
+                if(ejes===1){
+                    auxi=["Numero","Adicion y sustraccion","Multiplicacion y division","Proporcionalidad","Ecuaciones","Funciones","Patrones, figuras geometricas y expresiones equivalentes"];
+                    for(i=0;i<auxi.length;i++){
+                        tema.options[i+1]=new Option(auxi[i])
+                    }
+                }
+                else{
+                    if(ejes===2){
+                        auxi=["Figuras y cuerpos geometricos","Magnitudes y medidas"];
+                        for(i=0;i<auxi.length;i++){
+                            tema.options[i+1]=new Option(auxi[i])
+                        }
+                    }
+                    else{
+                        if(ejes===3){
+                            auxi=["Estadistica","Probabilidad"];
+                            for(i=0;i<auxi.length;i++){
+                                tema.options[i+1]=new Option(auxi[i])
+                            }
+                        }
+                    }
+                }
+                tema.options[0].selected=true;
+            }
+            function lleno(){
+                var contador=0;
+                var aux=eje.selectedIndex;
+                if(aux===0){
+                    alert("Favor de selecionar un eje");
+                    document.getElementById("eje").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                aux=tema.selectedIndex;
+                if(aux===0){
+                    alert("Favor de selecionar un tema");
+                    document.getElementById("tema").focus();
+                }
+                else{
+                    contador+=1;
+                }
+                for(i=0,conta=0;i<tipo.length;i++){
+                    if(tipo[i].checked){
+                        contador+=1;
+                        break;
+                    }
+                    else{
+                        conta+=1;
+                    }
+                    if(conta===2) {
+                        alert("Favor de selecionar un tipo");
+                        document.getElementById("tipo").focus();
+                        break;
+                    }
+                }
+                if(contador===3){
+                    if(confirm("Empezar cuestionario?")){
+                        alert("Empieza");
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="opcalum.jsp"><button id="myBtn2"><i class="fa fa-home"></i></button></a>
+                   
+        <div class="principal" style="height: 100%; width: 100%; background-color: rgba(0,0,0,0.2);">
+            <br><br><br><br><br><br><br>
+            <h1>Aprender</h1>
+            <form action="Generador.jsp" method="post">
+                <h3>Seleciona un tema</h3>
+                <select name="eje" id="eje" onchange="cambio()">
+                    <option selected disabled>Seleccione algun eje</option>
+                    <option>Número, álgebra y variación</option>
+                    <option>Forma, espacio y medida</option>
+                    <option>Análisis de datos</option>
+                </select>
+                <select name="tema" id="tema">
+                    <option selected disabled>Seleccione algun tema</option>
+                </select>
+                <br>
+                <h3>Selecione un tipo</h3>
+                <input type="radio" value="Cuestionario" id="tipo" name="tipo"> 
+                <label>Cuestionario</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" value="Problemario" id="tipo" name="tipo"> 
+                <label>Problemario</label>
+                <br>
+                <br>
+                <input type="submit" value="Empezar cuestionario" onclick="return lleno()" class="button">
+            </form>
+        </div>
+    </body>
+</html>

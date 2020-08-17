@@ -1,0 +1,26 @@
+div.div1 {
+    width: 100%;
+}
+img.img1{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+img.img1:hover{
+    background: aliceblue;
+}
+div.barrap {
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+div.barrap > div {
+   border-radius: 20px;
+   text-align: center;
+}

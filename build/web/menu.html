@@ -1,0 +1,158 @@
+<html>
+<head>
+    <title>Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="img/pesta1.ico"/>
+<link rel="stylesheet" type="text/css" href="prueba.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="formulario.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2vw ;
+    color: white;
+}
+
+a:link {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    font-family: 'Quicksand', sans-serif;
+    color: whitesmoke;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a:active {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+
+.split {
+    height: 100%;
+    width: 33.4%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left {
+    left: 0%;
+    color: #fff;
+    background: linear-gradient(-45deg,#00223E , #FFA17F,#00223E , #FFA17F);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 7s ease infinite;
+    -moz-animation: Gradient 7s ease infinite;
+    animation: Gradient 7s ease infinite;
+}
+
+.right {
+    right: 0%;
+    color: #fff;
+    background: linear-gradient(-45deg, #2E1437, #948E99, #2E1437, #948E99);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 7s ease infinite;
+    -moz-animation: Gradient 7s ease infinite;
+    animation: Gradient 7s ease infinite;
+}
+.center{
+    left: 33.4%;
+    color: #fff;
+    background: linear-gradient(-45deg, #360033,#0b8793 ,#360033 ,#0b8793 );
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 7s ease infinite;
+    -moz-animation: Gradient 7s ease infinite;
+    animation: Gradient 7s ease infinite;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+</style>
+</head>
+<body>
+<div class="split left">
+    <div class="centered">
+        <a href="Alumnos.jsp"><img src="img/Estudiante.png" alt="Estudiante" width="512" height="150"></a>
+        <a href="Alumnos.jsp"><h1>Estudiante</h1></a>
+        <p><a href="Alumnos.jsp"> Aprende y mejora</a></p>
+    </div>
+    <a href="todos.html"><button id="myBtn2"><i class="fa fa-home"></i></button></a>
+</div>
+
+<div class="split center">
+    <div class="centered">
+        <a href="Maestro.jsp"><img src="img/profesor.png" alt="Profesor"  width="512" height="150"></a>
+        <a href="Maestro.jsp"><h1>Profesor</h1></a>
+        <p><a href="Maestro.jsp">Orienta</a></p>
+    </div>
+</div>
+
+<div class="split right">
+    <div class="centered">
+        <a href="director.html"><img src="img/director.png" alt="Director" width="512" height="150"></a>
+        <a href="director.html"><h1>Director</h1></a>
+        <p><a href="director.html">Administra</a></p>
+    </div>
+</div>
+</body>
+</html> 

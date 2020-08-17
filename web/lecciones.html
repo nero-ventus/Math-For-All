@@ -1,0 +1,606 @@
+
+<html>
+    <head>
+        <title>LECCIONES</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="img/pesta1.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css.css">
+        <link rel="stylesheet" type="text/css" href="inicio.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+                var opt_1=new Array("Temas: ","Número ","Adición y sustracción ","Multiplicación y división ","Proporcionalidad ","Ecuaciones ","Funciones ","Patrones, figuras geométricas y expresiones equivalentes ");
+                var opt_2=new Array("Temas: ","Figuras y cuerpos geométricos ","Magnitudes y medidas ");
+                var opt_3=new Array("Temas: ","Estadística ","Probabilidad ");
+                
+            function cambio()
+            {
+                var municipio;
+                municipio=document.formulario1.municipio[document.formulario1.municipio.selectedIndex].value;
+                if(municipio!==0)
+                {
+                    ou_opts=eval("opt_"+municipio);
+                    num_opts=ou_opts.length;
+                    document.formulario1.opt.length=num_opts;
+                    for(i=0;i<num_opts;i++)
+                    {
+                        document.formulario1.opt.options[i].value=ou_opts[i];
+                        document.formulario1.opt.options[i].text=ou_opts[i];
+                    }
+                }
+                else
+                {
+                    document.formulario1.opt.length=1;
+                    document.formulario1.opt.options[0].value="-";
+                    document.formulario1.opt.options[0].text="-";
+                }
+                document.formulario1.opt.options[0].selected=true;
+            }
+            function desplegado()
+            {
+                if(document.getElementById("mun").selectedIndex===1){
+                    document.getElementById('video8').pause();
+                    document.getElementById('video9').pause();
+                    document.getElementById('video10').pause();
+                    document.getElementById('video11').pause();
+                    document.getElementById('div_figura').style.display = 'none';
+                    document.getElementById('div_magnitud').style.display = 'none';
+                    document.getElementById('div_estadistica').style.display = 'none';
+                    document.getElementById('div_probabilidad').style.display = 'none';
+                        if(document.getElementById("opi").selectedIndex===1)
+                        {
+                          document.getElementById('video1').pause();
+                          document.getElementById('video3').pause();
+                          document.getElementById('video4').pause();
+                          document.getElementById('video5').pause();
+                          document.getElementById('video6').pause();
+                          document.getElementById('video7').pause();
+                          document.getElementById('div_numero').style.display = '';  
+                          document.getElementById('div_sumres').style.display = 'none';
+                          document.getElementById('div_multidivi').style.display = 'none';
+                          document.getElementById('div_propor').style.display = 'none';
+                          document.getElementById('div_ecuacion').style.display = 'none';
+                          document.getElementById('div_funcion').style.display = 'none';
+                          document.getElementById('div_patron').style.display = 'none';
+                        }
+                        else
+                            if(document.getElementById("opi").selectedIndex===2)
+                            {
+                                document.getElementById('video2').pause();
+                                document.getElementById('video3').pause();
+                                document.getElementById('video4').pause();
+                                document.getElementById('video5').pause();
+                                document.getElementById('video6').pause();
+                                document.getElementById('video7').pause();
+                                document.getElementById('div_sumres').style.display = '';
+                                document.getElementById('div_numero').style.display = 'none';
+                                document.getElementById('div_multidivi').style.display = 'none';
+                                document.getElementById('div_propor').style.display = 'none';
+                                document.getElementById('div_ecuacion').style.display = 'none';
+                                document.getElementById('div_funcion').style.display = 'none';
+                                document.getElementById('div_patron').style.display = 'none';
+                            }
+                        else
+                            if(document.getElementById("opi").selectedIndex===3)
+                            {
+                                document.getElementById('video1').pause();
+                                document.getElementById('video2').pause();
+                                document.getElementById('video4').pause();
+                                document.getElementById('video5').pause();
+                                document.getElementById('video6').pause();
+                                document.getElementById('video7').pause();
+                                document.getElementById('div_sumres').style.display = 'none';
+                                document.getElementById('div_numero').style.display = 'none'; 
+                                document.getElementById('div_multidivi').style.display = '';
+                                document.getElementById('div_propor').style.display = 'none';
+                                document.getElementById('div_ecuacion').style.display = 'none';
+                                document.getElementById('div_funcion').style.display = 'none';
+                                document.getElementById('div_patron').style.display = 'none';
+                            }
+                        else
+                            if(document.getElementById("opi").selectedIndex===4)
+                            {
+                                document.getElementById('video1').pause();
+                                document.getElementById('video2').pause();
+                                document.getElementById('video3').pause();
+                                document.getElementById('video5').pause();
+                                document.getElementById('video6').pause();
+                                document.getElementById('video7').pause();
+                                document.getElementById('div_sumres').style.display = 'none';
+                                document.getElementById('div_numero').style.display = 'none';
+                                document.getElementById('div_multidivi').style.display = 'none';
+                                document.getElementById('div_propor').style.display = '';
+                                document.getElementById('div_ecuacion').style.display = 'none';
+                                document.getElementById('div_funcion').style.display = 'none';
+                                document.getElementById('div_patron').style.display = 'none';
+                            }
+                        else
+                            if(document.getElementById("opi").selectedIndex===5)
+                            {
+                                document.getElementById('video1').pause();
+                                document.getElementById('video2').pause();
+                                document.getElementById('video3').pause();
+                                document.getElementById('video4').pause();
+                                document.getElementById('video6').pause();
+                                document.getElementById('video7').pause();
+                                document.getElementById('div_sumres').style.display = 'none';
+                                document.getElementById('div_numero').style.display = 'none'; 
+                                document.getElementById('div_multidivi').style.display = 'none';
+                                document.getElementById('div_propor').style.display = 'none';
+                                document.getElementById('div_ecuacion').style.display = '';
+                                document.getElementById('div_funcion').style.display = 'none';
+                                document.getElementById('div_patron').style.display = 'none';
+                            }
+                        else
+                            if(document.getElementById("opi").selectedIndex===6)
+                            {
+                                document.getElementById('video1').pause();
+                                document.getElementById('video2').pause();
+                                document.getElementById('video3').pause();
+                                document.getElementById('video4').pause();
+                                document.getElementById('video5').pause();
+                                document.getElementById('video7').pause();
+                                document.getElementById('div_sumres').style.display = 'none';
+                                document.getElementById('div_numero').style.display = 'none'; 
+                                document.getElementById('div_multidivi').style.display = 'none';
+                                document.getElementById('div_propor').style.display = 'none';
+                                document.getElementById('div_ecuacion').style.display = 'none';
+                                document.getElementById('div_funcion').style.display = '';
+                                document.getElementById('div_patron').style.display = 'none';
+                            }
+                        else
+                            if(document.getElementById("opi").selectedIndex===7)
+                            {
+                                document.getElementById('video1').pause();
+                                document.getElementById('video2').pause();
+                                document.getElementById('video3').pause();
+                                document.getElementById('video4').pause();
+                                document.getElementById('video5').pause();
+                                document.getElementById('video6').pause();
+                                document.getElementById('div_sumres').style.display = 'none';
+                                document.getElementById('div_numero').style.display = 'none';
+                                document.getElementById('div_multidivi').style.display = 'none';
+                                document.getElementById('div_propor').style.display = 'none';
+                                document.getElementById('div_ecuacion').style.display = 'none';
+                                document.getElementById('div_funcion').style.display = 'none';
+                                document.getElementById('div_patron').style.display = '';
+                            }
+                    }
+                    
+                    if(document.getElementById("mun").selectedIndex===2){
+                        document.getElementById('video1').pause();
+                        document.getElementById('video2').pause();
+                        document.getElementById('video3').pause();
+                        document.getElementById('video4').pause();
+                        document.getElementById('video5').pause();
+                        document.getElementById('video6').pause();
+                        document.getElementById('video7').pause();
+                        document.getElementById('video10').pause();
+                        document.getElementById('video11').pause();
+                        document.getElementById('div_sumres').style.display = 'none';
+                        document.getElementById('div_numero').style.display = 'none'; 
+                        document.getElementById('div_multidivi').style.display = 'none';
+                        document.getElementById('div_propor').style.display = 'none';
+                        document.getElementById('div_ecuacion').style.display = 'none';
+                        document.getElementById('div_funcion').style.display = 'none';
+                        document.getElementById('div_patron').style.display = 'none';
+                        document.getElementById('div_estadistica').style.display = 'none';
+                        document.getElementById('div_probabilidad').style.display = 'none';
+                            if(document.getElementById("opi").selectedIndex===1)
+                            {
+                                document.getElementById('video9').pause();
+                                document.getElementById('div_figura').style.display = '';
+                                document.getElementById('div_magnitud').style.display = 'none';
+                            }
+                            else
+                            if(document.getElementById("opi").selectedIndex===2)
+                            {
+                                document.getElementById('video8').pause();
+                                document.getElementById('div_figura').style.display = 'none';
+                                document.getElementById('div_magnitud').style.display = '';
+                            }
+                        }
+                        
+                    if(document.getElementById("mun").selectedIndex===3){
+                        document.getElementById('video1').pause();
+                        document.getElementById('video2').pause();
+                        document.getElementById('video3').pause();
+                        document.getElementById('video4').pause();
+                        document.getElementById('video5').pause();
+                        document.getElementById('video6').pause();
+                        document.getElementById('video7').pause();
+                        document.getElementById('video8').pause();
+                        document.getElementById('video9').pause();
+                        document.getElementById('div_sumres').style.display = 'none';
+                        document.getElementById('div_numero').style.display = 'none'; 
+                        document.getElementById('div_multidivi').style.display = 'none';
+                        document.getElementById('div_propor').style.display = 'none';
+                        document.getElementById('div_ecuacion').style.display = 'none';
+                        document.getElementById('div_funcion').style.display = 'none';
+                        document.getElementById('div_patron').style.display = 'none';
+                        document.getElementById('div_figura').style.display = 'none';
+                        document.getElementById('div_magnitud').style.display = 'none';
+                            if(document.getElementById("opi").selectedIndex===1)
+                            {
+                                document.getElementById('video11').pause();
+                                document.getElementById('div_estadistica').style.display = '';
+                                document.getElementById('div_probabilidad').style.display = 'none';
+                            }
+                            else
+                            if(document.getElementById("opi").selectedIndex===2)
+                            {
+                                document.getElementById('video10').pause();
+                                document.getElementById('div_estadistica').style.display = 'none';
+                                document.getElementById('div_probabilidad').style.display = '';
+                            }
+                        }
+                        
+                    }
+        </script>
+    </head>
+    <body>
+        <div  style="height: 100%; width: 100%; display: table;" class="color2">
+            <div style="height: 32%; width: 100%; float: left; position: absolute; top:0%; left: 0% " class="colordiv">
+                <center><p><font class="fuente-titulo">LECCIONES</font></p></center>
+                <center>
+                 <form name="formulario1" action="#"  >
+                     <select name="municipio" onchange="cambio()" id="mun" class="combo">
+                        <option value="0" disabled selected>Eje: </option>
+                    <option value="1" >Número, álgebra y variación.</option>
+                    <option value="2" >Forma, espacio y medida</option>
+                    <option value="3" >Análisis de datos</option>
+                </select>
+                     <select name="opt" id="opi" class="combo">
+                    <option value="Temas" disabled selected>Temas</option>
+                </select>
+                </form>
+                    <input type="button" class="button" value="Aceptar" name="boton1" onclick="desplegado()" >
+                </center>
+            </div>
+            <a href="opcalum.jsp"><button id="myBtn"><i class="fa fa-home"></i></button></a>
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_sumres">
+                <br>
+                <center><p><font class="fuente-titulo">Suma y Resta</font></p></center>
+                <center><video id="video1" src="Videos/SUMARESTA.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">La suma o adición es la operación matemática que resulta al reunir en una sola varias cantidades.
+                                <br>
+                                Las números que se suman se llaman sumandos y el resultado suma o total.
+                                <br>
+                                Para su notación se emplea entre los sumandos el signo + que se lee "más".</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/suma.gif" width="188" height="78"></center>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><font class="fuente-texto">La sustracción o resta es la operación contraria a la suma.
+                                <br>
+                                Tiene por objeto, dada la suma de dos números y uno de ellos, hallar el otro.
+                                <br>
+                                a + b = c
+                                <br>
+                                c − b = a
+                                <br>
+                                El minuendo (c) es la suma dada.
+                                <br>
+                                El sustraendo (b) es el número conocido.
+                                <br>
+                                Resta o diferencia (a) es el resultado.
+                                <br>
+                                Para su notación se coloca entre el minuendo y el sustraendo el signo − que se lee "menos".</font></p>
+                        </td>
+                        <td>
+                                <center><img src="Imagenes/resta.gif" width="205" height="78"></center>
+                        </td>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_numero">
+                <br>
+                <center><p><font class="fuente-titulo">De decimal a fraccion.</font></p></center>
+                <center><video id="video2" src="Videos/decimales.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">Los números decimales se utilizan para representar números más pequeños que la unidad.
+                                <br>
+                                Los números decimales se escriben a la derecha de las Unidades separados por una coma. Es decir:
+                                <br>
+                                Centenas   Decenas   Unidades , Décimas   Centésimas   Milésimas.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/decimales.png" width="250" height="120"></center>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><font class="fuente-texto">En matemáticas, una fracción, número fraccionario, es la expresión de una cantidad dividida entre otra cantidad; 
+                                es decir que representa un cociente no efectuado de números. Por razones históricas también se les llama fracción 
+                                común, fracción vulgar o fracción decimal. Las fracciones comunes se componen de: numerador, denominador y línea 
+                                divisora entre ambos (barra horizontal u oblicua). En una fracción común a/b el denominador "b" expresa la cantidad 
+                                de partes iguales que representan la unidad, y el numerador "a" indica cuántas de ellas se toman.</font></p>
+                        </td>
+                        <td>
+                                <center><img src="Imagenes/fraccion.png" width="252" height="332"></center>
+                        </td>
+                    </tr>
+                </table>
+                </center>
+                
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_multidivi">
+                <br>
+                <center><p><font class="fuente-titulo">Multiplicacion y Division de Fracciones.</font></p></center>
+                <center><video id="video3" src="Videos/multiydivi.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">Vamos a aprender cómo multiplicar dos o más fracciones. 
+                                <br>
+                                Para ello, tan solo tenemos que seguir los siguientes pasos:
+                                <br>
+                                1. Simplificar fracciones: Cualquier numerador se puede simplificar con cualquier denominador.
+                                <br>
+                                2. Multiplicar en línea: Se multiplican los denominadores para obtener el denominador final y se multiplican los numeradores para obtener el numerador final.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/multi.png" width="285" height="242"></center>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><font class="fuente-texto">Para dividir dos o más fracciones, se multiplican "en cruz". 
+                                Esto es: el numerador (número de arriba) de la primera fracción por el denominador (número de abajo) de la segunda fracción, 
+                                así conseguimos el numerador. Para obtener el denominador, tenemos que multiplicar el denominador (número de abajo) de la 
+                                primera fracción por el numerador (número de arriba) de la segunda fracción.</font></p>
+                        </td>
+                        <td>
+                                <center><img src="Imagenes/divi.png" width="221" height="130"></center>
+                        </td>
+                    </tr>
+                </table>
+                </center>
+                
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_propor">
+                <br>
+                <center><p><font class="fuente-titulo">Proporcionalidad</font></p></center>
+                <center><video id="video4" src="Videos/proporcionalidad.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center><font class="colortr fuente-texto">Para poder resolver ejercicios de números proporcionales, 
+                    <br>
+                    lo primero que debemos conocer son los conceptos de razón y de proporción.</font></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">La razón es el cociente entre dos números o cantidades comparables entre sí, que se expresa como una fracción. 
+                                Es decir, si tenemos un número a y un número b, la razón entre ellos se representa mediante la fracción a/b</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/razon.png" width="394" height="130"></center>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><font class="fuente-texto">Pero… ¿Podemos encontrar distintas parejas de números que tengan entre sí una misma razón?
+                                <br>
+                                ¡Pues claro! Hay infinitas parejas de números que cumplan esta condición. Por ejemplo, vamos a pensar en distintas parejas de números cuya razón sea 2,5:
+                                <br>
+                                5 y 2; 10 y 4; 100 y 40; 2,5 y 1…
+                                <br>
+                                Esto lo representamos del siguiente modo: 5/2 = 10/4 = 100/40 = 2,5/1 = 2,5
+                                <br>
+                                Todas estas parejas de números son proporcionales entre sí.
+                                <br>
+                                Por lo tanto, decimos que los números a, b, c y d forman una proporción si la razón entre a y b es la misma que entre c y d. Esto se escribe: a/b = c/d
+                                <br>
+                                Y se lee: a es a b como c es a d
+                                <br>
+                                Así, se cumple que a x d  = b x c</font></p>
+                        </td>
+                        <td>
+                                <center><img src="Imagenes/proporcion.png" width="394" height="197"></center>
+                        </td>
+                    </tr>
+                </table>
+                </center>
+                
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_ecuacion">
+                <br>
+                <center><p><font class="fuente-titulo">Ecuaciones Lineales.</font></p></center>
+                <center><video id="video5" src="Videos/ecuaciones.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">Una ecuación de primer grado o ecuación lineal es una igualdad que involucra una o 
+                                más variables a la primera potencia y no contiene productos entre las variables, es decir, una ecuación que involucra solamente sumas y restas de una 
+                                variable a la primera potencia. En todo anillo conmutativo pueden definirse ecuaciones de primer grado.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/ecuaciones.png" width="290" height="319"></center>
+                        </TD>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_funcion">
+                <br>
+                <center><p><font class="fuente-titulo">Funciones.</font></p></center>
+                <center><video id="video6" src="Videos/funcion.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">En matemáticas, se dice que una magnitud 
+                                o cantidad es función de otra si el valor de la primera depende del valor de la segunda. Por ejemplo el área 
+                                A de un círculo es función de su radio r (el valor del área es proporcional al cuadrado del radio, A = π·r2). 
+                                Del mismo modo, la duración T de un viaje en tren entre dos ciudades separadas por una distancia d de 150 km 
+                                depende de la velocidad v a la que se desplace el tren (la duración es inversamente proporcional a la velocidad, 
+                                d / v). A la primera magnitud (el área, la duración) se la denomina variable dependiente, y la cantidad de la 
+                                que depende (el radio, la velocidad) es la variable independiente.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/funcion.png" width="325" height="355"></center>
+                        </TD>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_patron">
+                <br>
+                <center><p><font class="fuente-titulo">Patrones, figuras geométricas y <br>expresiones equivalentes.</font></p></center>
+                <center><video id="video7" src="Videos/modelos.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">La geometría algebraica es una rama de la matemática que, como sugiere su nombre, 
+                                combina el álgebra abstracta, especialmente el álgebra conmutativa, con la geometría analítica. Se puede comprender como el estudio de los 
+                                conjuntos de soluciones de los sistemas de ecuaciones algebraicas. Cuando hay más de una variable, aparecen las consideraciones geométricas 
+                                que son importantes para entender el fenómeno. Podemos decir que la materia en cuestión comienza cuando abandonamos la mera solución de
+                                ecuaciones, y el tema de "entender" todas las soluciones se vuelve tan importante como el de encontrar alguna solución, lo cual lleva a las 
+                                "aguas más profundas" del mundo de la matemática, tanto conceptual como técnicamente.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/modelo.png" width="320" height="360"></center>
+                        </TD>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_figura">
+                <br>
+                <center><p><font class="fuente-titulo">Figuras y cuerpos geométricos.</font></p></center>
+                <center><video id="video8" src="Videos/figura.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">En matemáticas, dos figuras geométricas son 
+                                "congruentes" si tienen los lados iguales y el mismo tamaño; si existe una isometría que los relaciona: una 
+                                transformación que puede ser de traslación, rotación y/o reflexión. Dos figuras son congruentes si tienen la
+                                misma forma y tamaño, aunque su posición u orientación sean distintas. Las partes relacionadas entre las figuras
+                                congruentes se llaman homólogas o correspondientes.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/figura.png" width="274" height="190"></center>
+                        </TD>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_magnitud">
+                <br>
+                <center><p><font class="fuente-titulo">Magnitudes y medidas.</font></p></center>
+                <center><video id="video9" src="Videos/magnitudes.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">1. El perímetro de un polígono (o cualquier otra curva cerrada, tal como un círculo) es la distancia alrededor del exterior.
+                                <br>
+                                <br>
+                                2. El área de una curva simple, cerrada, plana es la cantidad del espacio interior.
+                                <br>
+                                <br>
+                                3. El volumen de un solido de forma 3D es la cantidad del espacio desplazado por el.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/magnitudes.png" width="395" height="230"></center>
+                        </TD>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_estadistica">
+                <br>
+                <center><p><font class="fuente-titulo">Estadistica.</font></p></center>
+                <center><video id="video10" src="Videos/estadistica.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">1. La media de un conjunto de números, algunas ocasiones simplemente llamda el promedio , es la suma de los datos dividida entre el número total de datos.
+                                <br>
+                                <br>
+                                2. La mediana de un conjunto de números es el número medio en el conjunto (después que los números han sido arreglados del menor al mayor) -- o, si hay un número par de datos, la mediana es el promedio de los dos números medios.
+                                <br>
+                                <br>
+                                3. La moda de un conjunto de números es el número que aparece más a menudo.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/estadistica.gif" width="381" height="158"></center>
+                        </TD>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            
+            <div style="display: none; height: 68%; width: 100%; float: left; position: absolute; top:32%; left: 0%; overflow: scroll;" class="color" id="div_probabilidad">
+                <br>
+                <center><p><font class="fuente-titulo">Probabilidad.</font></p></center>
+                <center><video id="video11" src="Videos/probabilidad.mp4" width=500 height=350 controls ></video></center>
+                <br>
+                <br>
+                <center>
+                <table width="800"  CELLPADDING="17" class="colortr">
+                    <TR> 
+                        <TD width="400">
+                            <p><font class="fuente-texto">La probabilidad es una medida de la certidumbre asociada a un suceso o evento futuro y suele expresarse como un número entre 0 y 1 (o entre 0 % y 100 %).
+                                <br>
+                                Una forma tradicional de estimar algunas probabilidades sería obtener la frecuencia de un acontecimiento determinado mediante la realización de experimentos aleatorios, de los que se conocen todos los resultados posibles, bajo condiciones suficientemente estables. Un suceso puede ser improbable (con probabilidad cercana a cero), probable (probabilidad intermedia) o seguro (con probabilidad uno).
+                                <br>
+                                La teoría de la probabilidad se usa extensamente en áreas como la estadística, la física, la matemática, las ciencias, la administración, contaduría, economía y la filosofía para sacar conclusiones sobre la probabilidad discreta de sucesos potenciales y la mecánica subyacente discreta de sistemas complejos, por lo tanto es la rama de las matemáticas que estudia, mide o determina los experimentos o fenómenos aleatorios.</font></p>
+                        </TD>
+                        <TD width="400">
+                            <center><img src="Imagenes/probabilidad.jpg" width="395" height="195"></center>
+                        </TD>
+                    </tr>
+                </table>
+                </center>
+            </div>
+        </div>
+    </body>
+</html>
