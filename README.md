@@ -12,7 +12,7 @@ among students, improve the test application process, and facilitate the access 
 
 ### Level system and competitive scoreboard
 
-<img src="imgs/levels.png" width="400" height="auto"/> <img src="imgs/scoreboard.png" width="400" height="auto"/>
+<img src="imgs/levels.png" width="auto" height="225"/> <img src="imgs/scoreboard.png" width="400" height="auto"/>
 
 ### Test Maker
 
